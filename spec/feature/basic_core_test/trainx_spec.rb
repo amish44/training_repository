@@ -9,7 +9,7 @@ feature 'TrainX tests', type: :feature do
 	scenario 'Visit trainx' do
 		visit '/'
 		fill_in 'user_login', with: 'trainxuser'
-		fill_in 'user_password', with: 'Temp@1234'
+		fill_in 'user_password', with: '1234'
 		find('#login_button').send_keys :enter 
 		expect(page.title).to have_content('Coupa Home')
 		click_link('trainx')
