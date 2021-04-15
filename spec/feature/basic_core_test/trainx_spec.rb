@@ -10,7 +10,8 @@ feature 'TrainX specs', type: :feature do
 		visit '/'
 		fill_in 'user_login', with: 'trainxuser'
 		fill_in 'user_password', with: 'Temp@1234'
-		find('#login_button').send_keys :enter 
+		#find('#login_button').send_keys :enter 
+		click_on('login_button')
 		expect(page.title).to have_content('Coupa Home')
 		find('#my_account').hover
 		click_link('Sign Out')
@@ -21,4 +22,5 @@ feature 'TrainX specs', type: :feature do
 		visit 'https://google.com'
 		Capybara.current_session.driver.quit
 	end
+	
 end
